@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+int findSecondLargestElement(int arr[],int n)
+{
+  int firstLargeElement = INT_MIN;
+  int secondLargeElement = INT_MIN;
+  for(int i=0;i<n;i++)
+  {
+    if(firstLargeElement<arr[i])
+    {
+      firstLargeElement = arr[i];
+    }
+  }
+  for(int i=0;i<n;i++)
+  {
+    if(secondLargeElement < arr[i] && arr[i] != firstLargeElement)
+    {
+      secondLargeElement = arr[i];
+    }
+  }
+  return secondLargeElement;
+}
+
+int main() 
+{
+    int arr[] = {3,7,9,15,27};
+    cout<<findSecondLargestElement(arr,5);
+    return 0;
+}
